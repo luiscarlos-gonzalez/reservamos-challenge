@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Reservamos
   class SearchPlaceService < ApplicationService
     attr_reader :q

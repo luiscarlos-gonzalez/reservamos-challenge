@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ForecastsController < ApplicationController
   def index
     init_cookie
@@ -9,7 +11,7 @@ class ForecastsController < ApplicationController
     place = search_place(query: forecast_params).call
     forecast = get_forecast(lat: place['lat'].to_f, lon: place['lon'].to_f).call
     cities = cities_from_cookie
-    cities << city(name: place['display'], forecast: forecast)
+    cities << city(name: place['display'], forecast:)
     cookies[:cities] = cities.to_json
 
     redirect_to root_path
@@ -27,8 +29,8 @@ class ForecastsController < ApplicationController
 
   def city(name: '', forecast: [])
     {
-      name: name,
-      forecast: forecast
+      name:,
+      forecast:
     }
   end
 
@@ -41,6 +43,6 @@ class ForecastsController < ApplicationController
   end
 
   def get_forecast(lat: 0, lon: 0)
-    OpenWeatherMap::GetForecastService.new(lat: lat, lon: lon)
+    OpenWeatherMap::GetForecastService.new(lat:, lon:)
   end
 end

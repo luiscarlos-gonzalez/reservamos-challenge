@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
 ruby '3.3.0'
@@ -13,12 +15,12 @@ gem 'sprockets-rails'
 gem 'sqlite3', '~> 1.4'
 gem 'stimulus-rails'
 gem 'turbo-rails'
-gem 'tzinfo-data', platforms: %i[ windows jruby ]
+gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
   gem 'byebug', '~> 11.1.3'
+  gem 'debug', platforms: %i[mri windows]
   gem 'rspec-rails', '~> 6.1.0'
-  gem 'debug', platforms: %i[ mri windows ]
 end
 
 group :development do
