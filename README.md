@@ -1,24 +1,36 @@
-# README
+## Resevamos tech lead challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Up and Running
 
-Things you may want to cover:
+Clone the repository:
 
-* Ruby version
+```git clone git@github.com:luiscarlos-gonzalez/reservamos-challenge.git```
 
-* System dependencies
+Install Gems:
 
-* Configuration
+```bundle install```
 
-* Database creation
+Copy the `.env.example` to `.env`
 
-* Database initialization
+```cp .env.example .env```
 
-* How to run the test suite
+Add to .env the Open Weather Key.
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the server and visit the home.
 
-* Deployment instructions
+```rails s```
 
-* ...
+Go to [localhost:3000](http://localhost:3000)
+
+### Improvements 
+
+With more time I could add the following points.
+
+* Error handling.
+* Add limit for 5 cities only.
+* Tests, add unit test for services, controllers and feature tests with capybara.
+* Reduce complexity of the `ForecastController#create` method for reduce the ABC size.
+* Reduce complexity of the `OpenWeatherMap::GetForecastService#call` method for reduce the ABC size.
+* Add some stimulus or react code to make the application more interactive.
+  * For example to get a list of suggested cities accordantly with the text written by the user.
+  * Update the table using JS. 
