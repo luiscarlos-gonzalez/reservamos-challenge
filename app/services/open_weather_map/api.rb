@@ -8,6 +8,7 @@ module OpenWeatherMap
         query: {
           lat: lat,
           lon: lon,
+          units: 'metric',
           appid: ENV['OWM_KEY']
         }
       })
