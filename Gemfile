@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '3.3.0'
 
 gem 'bootsnap', require: false
+gem 'dotenv'
 gem 'httparty', '~> 0.17.3'
 gem 'importmap-rails'
 gem 'jbuilder'
