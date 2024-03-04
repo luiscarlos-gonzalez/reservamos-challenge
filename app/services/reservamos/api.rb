@@ -1,5 +1,5 @@
 module Reservamos
-  class ReservamosApi
+  class Api
     include HTTParty
     base_uri 'https://search.reservamos.mx/api'
 

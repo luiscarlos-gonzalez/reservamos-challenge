@@ -7,7 +7,7 @@ module Reservamos
     end
 
     def call
-      reservamos_api = ReservamosApi.new
+      reservamos_api = Api.new
       places = reservamos_api.places(@q)
       places[0]
     end
