@@ -1,2 +1,28 @@
 <h1>Forecasts#index</h1>
-<p>Find me in app/views/forecasts/index.html.erb</p>
+<%= form_with url: :forecasts, method: :post do |form| %>
+  <%= form.label :city, 'Busca una ciudad' %>
+  <%= form.text_field :query %>
+  <%= form.submit 'Buscar' %>
+<% end %>
+
+<table>
+  <thead>
+    <th>City</th>
+    <th>Day 1</th>
+    <th>Day 2</th>
+    <th>Day 3</th>
+    <th>Day 4</th>
+    <th>Day 5</th>
+    <th>Day 6</th>
+  </thead>
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= city['name'] %></td>
+        <% city['forecast'].each do |day| %>
+          <td>Min: <%= day[0] %>  &deg;C - Max: <%= day[1] %> &deg;C</td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
